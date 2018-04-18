@@ -19,6 +19,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".AddRecords" />
+        <activity android:name=".DeleteRecord" />
+        <activity android:name=".ViewRecords" />
+        <activity android:name=".SearchRecord"></activity>
     </application>
 
 </manifest>

@@ -1,5 +1,6 @@
 package com.apoorvasingh2810.dbmsproject
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.design.widget.NavigationView
@@ -10,6 +11,7 @@ import android.view.Menu
 import android.view.MenuItem
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
@@ -29,6 +31,27 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+
+        /**My Code */
+        btnViewRecords.setOnClickListener {
+            val intent = Intent(this, ViewRecords::class.java)
+            startActivity(intent)
+        }
+
+        btnAddRecords.setOnClickListener {
+            val intent = Intent(this, AddRecords::class.java)
+            startActivity(intent)
+        }
+
+        btnDeleteRecords.setOnClickListener {
+            val intent = Intent(this, DeleteRecord::class.java)
+            startActivity(intent)
+        }
+
+        btnSearchRecords.setOnClickListener {
+            val intent = Intent(this, SearchRecord::class.java)
+            startActivity(intent)
+        }
     }
 
     override fun onBackPressed() {
@@ -81,4 +104,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
+
+    /**My Code */
+
 }
